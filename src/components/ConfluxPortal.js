@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { util } from 'js-conflux-sdk'
+import { Drip } from 'js-conflux-sdk'
 
 import conflux from '../lib/conflux'
 import confluxPortal from '../lib/conflux-portal'
@@ -19,18 +19,22 @@ export default class ConfluxPortal extends PureComponent {
   connectConfluxPortal = async () => {
     this.setState({ status: PORTAL_STATE_CONNECTING })
     await confluxPortal.enable()
+
     const account = confluxPortal.getAccount()
+    console.log(account)
     this.setState({ status: PORTAL_STATE_CONNECTED, account, balance: '' })
     this.refreshBalance()
   }
 
   refreshBalance = async () => {
+
     if (!this.state.account) {
       return
     }
     this.setState({ balance: '' })
     const balance = await conflux.getBalance(this.state.account)
-    this.setState({ balance: util.unit.fromDripToCFX(balance) })
+    // This is different from https://github.com/ObsidianLabs/conflux-frontend-react
+    this.setState({ balance: Drip(balance).toCFX()})
   }
 
   renderPortalButton = () => {

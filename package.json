@@ -7,7 +7,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "js-conflux-sdk": "git+https://git@github.com/qftgtr/js-conflux-sdk.git",
+    "js-conflux-sdk": "git+https://github.com/Conflux-Chain/js-conflux-sdk.git",
     "lodash": "^4.17.19",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
