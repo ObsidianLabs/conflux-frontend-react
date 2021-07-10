@@ -1,4 +1,7 @@
 # Conflux 前端
+[注意：New Feature分支变更如下：
+1.因conflux CIP37地址的增加， Master 分支的Js-Conflux-SDK版本老旧 出现Conflux Portal账户获取后报错 依赖源改为https://github.com/Conflux-Chain/js-conflux-sdk.git
+2.新的js-conflux-sdk已经不包含util类 将drip转换成cfx部分需要用到Drip类]
 
 完整 Conflux 教程可前往 [Conflux DApp 开发教程](https://github.com/ObsidianLabs/conflux-dapp-tutorial)
 
